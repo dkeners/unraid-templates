@@ -6,7 +6,8 @@
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Shell>sh</Shell>
-  <Support>https://github.com/dkeners/unraid-templates/issues</Support>
+  <Support>https://forums.unraid.net/topic/190003-support-dkeners-maybe-web-worker/</Support>
+  <ReadMe>https://github.com/dkeners/unraid-templates/blob/main/README.md</ReadMe>
   <Project>https://maybefinance.com/</Project>
   <Overview>Maybe is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.&#xD;
 &#xD;
@@ -14,17 +15,17 @@ This is image 2 of 2 needed to run Maybe finance, **please see additional requir
 &#xD;
 " Maybe" is a trademark of Maybe Finance, Inc.</Overview>
   <Category>Productivity: Tools: Other:</Category>
+  <ExtraSearchTerms>maybe-finance maybe finance budget</ExtraSearchTerms>
   <WebUI>http://[IP]:[PORT:3000]</WebUI>
-  <TemplateURL>https://github.com/dkeners/unraid-templates/blob/main/dkeners/maybe_worker.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/dkeners/unraid-templates/refs/heads/main/dkeners/maybe_worker.xml</TemplateURL>
   <Icon>https://github.com/dkeners/unraid-templates/blob/main/dkeners/images/maybe.png?raw=true</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
   <PostArgs>bundle exec sidekiq</PostArgs>
-  <DonateText>Please consider donating to the creators of the projects you love. If you still feel like sharing a little something after that, I wouldn't mind a cup o' tea!</DonateText>
-  <DonateLink>https://dankenerson.com/donate</DonateLink>
   <Requires>This is image 2 of 2 needed to run Maybe finance, run alongside //Maybe_Web\\. Requires Maybe v0.5.0 or later.&#xD;
 Requires a //Postgres\\ database (version 16), and //Redis\\.&#xD;
 See the Maybe documentation for more information: https://github.com/maybe-finance/maybe/blob/main/docs/hosting/docker.md</Requires>
-  <Changes></Changes>
+  <Changes>
+  </Changes>
   <Config Name="Web UI Port" Target="3000" Default="3000" Mode="tcp" Description="" Type="Port" Display="always-hide" Required="true" Mask="false">3000</Config>
   <Config Name="Secret Key" Target="SECRET_KEY_BASE" Default="" Mode="" Description="Secret key. Run `openssl rand -hex 64` to generate a secret" Type="Variable" Display="always-hide" Required="true" Mask="true"/>
   <Config Name="Postgres - Host" Target="DB_HOST" Default="" Mode="" Description="Postgres database host.&#13;&#10;Suggested: {YOUR-POSTGRES-DOCKER-NAME}" Type="Variable" Display="always-hide" Required="true" Mask="false"/>
