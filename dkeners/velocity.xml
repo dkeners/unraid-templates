@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Velocity</Name>
+  <Repository>itzg/mc-proxy</Repository>
+  <Registry>https://registry.hub.docker.com/r/itzg/mc-proxy</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Shell>sh</Shell>
+  <Support>https://forums.unraid.net/topic/190650-support-dkeners-velocity/</Support>
+  <ReadMe>https://github.com/dkeners/unraid-templates/blob/main/README.md</ReadMe>
+  <Project>https://papermc.io/software/velocity</Project>
+  <Overview>This template is set up to use the Velocity part of itzg/mc-proxy. It is a Docker image that provides a choice of Minecraft proxies, the exposed variables configure it for Velocity. It is intended to be used in combination with itzg/minecraft-server containers.</Overview>
+  <Beta>False</Beta>
+  <Category>GameServers: Network:Proxy</Category>
+  <Date>2025-05-27</Date>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/dkeners/unraid-templates/refs/heads/main/dkeners/velocity.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/dkeners/unraid-templates/refs/heads/main/dkeners/images/velocity.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <Requires>Requires a //Minecraft\\ server. Preferably from the itzg/minecraft-server image.</Requires>
+  <Changes>
+  </Changes>
+  <Config Name="Port" Target="25565" Default="25565" Mode="tcp" Description="Port of your Minecraft proxy; How you want to access it." Type="Port" Display="always" Required="true" Mask="false">25565</Config>
+  <Config Name="Server Proxy Files" Target="/server" Default="" Mode="rw" Description="Leave blank for Unraid default appdata location" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Server Type" Target="TYPE" Default="VELOCITY" Mode="" Description="Sets the server proxy type" Type="Variable" Display="always" Required="true" Mask="false">VELOCITY</Config>
+  <Config Name="Enable Remote Connection" Target="ENABLE_RCON" Default="true" Mode="" Description="Enable remote connection, needed for many chat features." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Memory" Target="MEMORY" Default="512m" Mode="" Description="See: https://docs.papermc.io/velocity/tuning/" Type="Variable" Display="always" Required="false" Mask="false">512m</Config>
+  <Config Name="Server Icon URL" Target="ICON" Default="" Mode="" Description="URL to icon for server" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Java Runtime Options" Target="JVM_XX_OPTS" Default="" Mode="" Description="Space seperated: Consider adding -XX:MaxRAMPercentage={n} (with {n} replaced); the JVM default is 25%." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Java Runtime Options" Target="JVM_OPTS" Default="" Mode="" Description="Commands after JVM_XX_OPTS" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Plugins" Target="PLUGINS" Default="" Mode="" Description="Used to download a comma seperated list of *.jar urls to the plugins folder." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Enable Remote Connection" Target="ENABLE_RCON" Default="" Mode="" Description="Default is to be on" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Remote Connection Port" Target="25575" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="Remote Connection Password" Target="RCON_PASSWORD" Default="" Mode="" Description="Strong Secure Password" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Velocity Config" Target="/config" Default="" Mode="ro" Description="Velocity configuration file location. Leave blank for unraid default" Type="Path" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Forwarding Secret" Target="/plugins" Default="" Mode="ro" Description="Velocity plugin location. Leave blank for Unraid default" Type="Path" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="Icon Override" Target="" Default="" Mode="" Description="Set this URL to overwrite an existing ICON" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Initial Memory" Target="INIT_MEMORY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Max Memory" Target="MAX_MEMORY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Velocity Version" Target="VELOCITY_VERSION" Default="" Mode="" Description="Which Image to download; defaults to " Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Velocity Build ID" Target="VELOCITY_BUILD_ID" Default="" Mode="" Description="Pin to a specific build within a version" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
